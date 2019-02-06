@@ -56,7 +56,12 @@ public class SchedulerPlugin {
     }
 
     public void configure(SchedulerPluginConfig config, SchedulerPlugin.Callback callback) {
-        alert('hi 2');
+        mContext.runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show();
+            }
+        });
+        
         Log.d(TAG, "- configure: " + config);
         mCallback = callback;
         config.save(mContext);
@@ -71,7 +76,8 @@ public class SchedulerPlugin {
 
     @TargetApi(21)
     public void start() {
-        alert('hi');
+        
+        
         Log.d(TAG, "- start scheduling job");
         long fetchInterval = mConfig.getMinimumFetchInterval() * 60L * 1000L;
         JobScheduler jobScheduler = (JobScheduler) mContext.getSystemService(Context.JOB_SCHEDULER_SERVICE);
