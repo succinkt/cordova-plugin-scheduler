@@ -85,7 +85,7 @@ public class SchedulerPlugin {
         } else {
             builder.setPeriodic(fetchInterval);
         }
-        console.debug('android OS: ', android.os.Build.Version.SDK_INT);
+        console.debug("android OS: " + android.os.Build.Version.SDK_INT);
         if (jobScheduler != null) {
             jobScheduler.schedule(builder.build());
         }
