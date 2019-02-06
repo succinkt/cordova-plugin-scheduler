@@ -133,7 +133,8 @@ public class SchedulerPlugin {
             //forceMainActivityReload();
             if (mCallback != null) {
                 mCallback.onFetch();
-            }
+            } else { Log.d(TAG, "-null callback");
+                }
         }
     }
 
@@ -157,7 +158,7 @@ public class SchedulerPlugin {
         Boolean isActive = false;
 
         if (mContext == null) {
-            return false; //supposed to be false, disabling if the activity is stopped
+            return false; 
         }
         ActivityManager activityManager = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
         try {
