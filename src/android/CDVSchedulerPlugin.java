@@ -17,14 +17,14 @@ public class CDVSchedulerPlugin extends CordovaPlugin {
 
     @Override
     protected void pluginInitialize() {
-        Activity activity   = cordova.getActivity();
+        /*Activity activity   = cordova.getActivity();
         Intent launchIntent = activity.getIntent();
         String action 		= launchIntent.getAction();
 
         if ((action != null) && (SchedulerPlugin.ACTION_FORCE_RELOAD.equalsIgnoreCase(action))) {
-            //isForceReload = true;
-            //activity.moveTaskToBack(true);
-        }
+            isForceReload = true;
+            activity.moveTaskToBack(true);
+        }*/
     }
 
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
