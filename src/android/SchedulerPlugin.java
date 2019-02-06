@@ -56,13 +56,6 @@ public class SchedulerPlugin {
     }
 
     public void configure(SchedulerPluginConfig config, SchedulerPlugin.Callback callback) {
-        /*mContext.getApplicationContext().runOnUiThread(new Runnable() {
-            public void run() {
-                Toast.makeText(mContext.getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
-            }
-        });*/
-        Log.d("~~~~~~", "jorge friendly");
-        
         Log.d(TAG, "- configure: " + config);
         mCallback = callback;
         config.save(mContext);
@@ -137,7 +130,7 @@ public class SchedulerPlugin {
             }
         } else {
             Log.d(TAG, "- MainActivity is inactive");
-            forceMainActivityReload();
+            //forceMainActivityReload();
         }
     }
 
@@ -149,12 +142,12 @@ public class SchedulerPlugin {
             Log.w(TAG, "- forceMainActivityReload failed to find launchIntent");
             return;
         }
-        /*launchIntent.setAction(ACTION_FORCE_RELOAD);
+        launchIntent.setAction(ACTION_FORCE_RELOAD);
         launchIntent.addFlags(Intent.FLAG_FROM_BACKGROUND);
         launchIntent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
         launchIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 
-        mContext.startActivity(launchIntent);*/
+        mContext.startActivity(launchIntent);
     }
 
     public Boolean isMainActivityActive() {
