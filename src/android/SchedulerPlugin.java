@@ -56,11 +56,12 @@ public class SchedulerPlugin {
     }
 
     public void configure(SchedulerPluginConfig config, SchedulerPlugin.Callback callback) {
-        mContext.getApplicationContext().runOnUiThread(new Runnable() {
+        /*mContext.getApplicationContext().runOnUiThread(new Runnable() {
             public void run() {
                 Toast.makeText(mContext.getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
+        Log.d("~~~~~~", "jorge friendly");
         
         Log.d(TAG, "- configure: " + config);
         mCallback = callback;
