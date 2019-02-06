@@ -56,9 +56,9 @@ public class SchedulerPlugin {
     }
 
     public void configure(SchedulerPluginConfig config, SchedulerPlugin.Callback callback) {
-        context.getApplicationContext().runOnUiThread(new Runnable() {
+        mContext.getApplicationContext().runOnUiThread(new Runnable() {
             public void run() {
-                Toast.makeText(context.getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext.getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
             }
         });
         
