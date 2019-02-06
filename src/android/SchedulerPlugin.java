@@ -56,11 +56,11 @@ public class SchedulerPlugin {
     }
 
     public void configure(SchedulerPluginConfig config, SchedulerPlugin.Callback callback) {
-        mContext.runOnUiThread(new Runnable() {
+        /*mContext.runOnUiThread(new Runnable() {
             public void run() {
                 Toast.makeText(activity, "Hello", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
         
         Log.d(TAG, "- configure: " + config);
         mCallback = callback;
