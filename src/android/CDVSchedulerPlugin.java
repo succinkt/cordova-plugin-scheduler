@@ -22,8 +22,8 @@ public class CDVSchedulerPlugin extends CordovaPlugin {
         String action 		= launchIntent.getAction();
 
         if ((action != null) && (SchedulerPlugin.ACTION_FORCE_RELOAD.equalsIgnoreCase(action))) {
-            isForceReload = true;
-            activity.moveTaskToBack(true);
+            //isForceReload = true;
+            //activity.moveTaskToBack(true);
         }
     }
 

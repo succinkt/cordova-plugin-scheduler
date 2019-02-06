@@ -56,6 +56,7 @@ public class SchedulerPlugin {
     }
 
     public void configure(SchedulerPluginConfig config, SchedulerPlugin.Callback callback) {
+        alert('hi 2');
         Log.d(TAG, "- configure: " + config);
         mCallback = callback;
         config.save(mContext);
@@ -70,6 +71,7 @@ public class SchedulerPlugin {
 
     @TargetApi(21)
     public void start() {
+        alert('hi');
         Log.d(TAG, "- start scheduling job");
         long fetchInterval = mConfig.getMinimumFetchInterval() * 60L * 1000L;
         JobScheduler jobScheduler = (JobScheduler) mContext.getSystemService(Context.JOB_SCHEDULER_SERVICE);
@@ -77,7 +79,7 @@ public class SchedulerPlugin {
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY)
                 .setRequiresDeviceIdle(false)
                 .setRequiresCharging(false)
-                .setPersisted(true);
+                .setPersisted(false);
         if (android.os.Build.VERSION.SDK_INT >= 24) {
             builder.setPeriodic(fetchInterval, fetchInterval);
         } else {
@@ -140,12 +142,12 @@ public class SchedulerPlugin {
             Log.w(TAG, "- forceMainActivityReload failed to find launchIntent");
             return;
         }
-        launchIntent.setAction(ACTION_FORCE_RELOAD);
+        /*launchIntent.setAction(ACTION_FORCE_RELOAD);
         launchIntent.addFlags(Intent.FLAG_FROM_BACKGROUND);
         launchIntent.addFlags(Intent.FLAG_ACTIVITY_NO_USER_ACTION);
         launchIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
 
-        mContext.startActivity(launchIntent);
+        mContext.startActivity(launchIntent);*/
     }
 
     public Boolean isMainActivityActive() {
