@@ -130,7 +130,7 @@ public class SchedulerPlugin {
             }
         } else {
             Log.d(TAG, "- MainActivity is inactive");
-            //forceMainActivityReload();
+            forceMainActivityReload();
         }
     }
 
@@ -154,7 +154,7 @@ public class SchedulerPlugin {
         Boolean isActive = false;
 
         if (mContext == null) {
-            return false;
+            return true; //supposed to be false, disabling if the activity is stopped
         }
         ActivityManager activityManager = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
         try {
